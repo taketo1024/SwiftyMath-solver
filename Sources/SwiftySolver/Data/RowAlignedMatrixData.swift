@@ -5,6 +5,8 @@
 //  Created by Taketo Sano on 2019/11/02.
 //
 
+import SwiftyMath
+
 final class RowAlignedMatrixData<R: Ring> {
     typealias Row = LinkedList<RowComponent<R>>
     

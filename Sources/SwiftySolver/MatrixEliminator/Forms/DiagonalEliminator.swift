@@ -6,6 +6,8 @@
 //  Copyright © 2017年 Taketo Sano. All rights reserved.
 //
 
+import SwiftyMath
+
 final class DiagonalEliminator<R: EuclideanRing>: MatrixEliminator<R> {
     override func isDone() -> Bool {
         data.components.allSatisfy { (i, j, a) in

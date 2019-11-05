@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftyMath
 
 public final class RankCalculator {
     public typealias R = 𝐅₂ // TODO to general field

@@ -12,7 +12,7 @@ let package = Package(
             targets: ["SwiftySolver"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/taketo1024/SwiftyMath.git", .branch("develop")),
+        .package(url: "https://github.com/taketo1024/SwiftyMath.git", from: "2.0.0"),
     ],
     targets: [
         .target(

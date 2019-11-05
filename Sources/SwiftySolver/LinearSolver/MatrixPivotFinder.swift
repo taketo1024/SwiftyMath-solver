@@ -16,6 +16,7 @@
 //  https://github.com/cbouilla/spasm
 
 import Dispatch
+import SwiftyMath
 
 public final class MatrixPivotFinder<R: Ring> {
     typealias Row = RowEliminationData<R>.Row

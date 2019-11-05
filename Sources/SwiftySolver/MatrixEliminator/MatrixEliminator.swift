@@ -6,6 +6,8 @@
 //  Copyright © 2017年 Taketo Sano. All rights reserved.
 //
 
+import SwiftyMath
+
 public class MatrixEliminator<R: EuclideanRing> {
     public enum Form {
         case RowEchelon

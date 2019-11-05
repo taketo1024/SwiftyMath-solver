@@ -5,6 +5,8 @@
 //  Created by Taketo Sano on 2019/10/29.
 //
 
+import SwiftyMath
+
 public final class LUFactorizer<R: EuclideanRing> {
     public static func factorize<n, m>(_ A: Matrix<n, m, R>) -> Result<n, m, R> {
         let pivots = MatrixPivotFinder.findPivots(of: A)

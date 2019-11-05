@@ -5,6 +5,8 @@
 //  Created by Taketo Sano on 2019/10/26.
 //
 
+import SwiftyMath
+
 public enum RowElementaryOperation<R: Ring> {
     case AddRow(at: Int, to: Int, mul: R)
     case MulRow(at: Int, by: R)

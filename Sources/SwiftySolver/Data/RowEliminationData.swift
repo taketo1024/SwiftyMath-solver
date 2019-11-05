@@ -6,6 +6,8 @@
 //  Copyright © 2017年 Taketo Sano. All rights reserved.
 //
 
+import SwiftyMath
+
 final class RowEliminationData<R: Ring> {
     typealias Row = RowAlignedMatrixData<R>.Row
 

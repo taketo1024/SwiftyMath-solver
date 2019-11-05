@@ -5,6 +5,8 @@
 //  Created by Taketo Sano on 2019/10/29.
 //
 
+import SwiftyMath
+
 public final class LinearSolver<R: EuclideanRing> {
     
     // solve: x * A = b

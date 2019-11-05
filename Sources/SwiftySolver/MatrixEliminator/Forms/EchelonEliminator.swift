@@ -6,6 +6,8 @@
 //  Copyright © 2017年 Taketo Sano. All rights reserved.
 //
 
+import SwiftyMath
+
 class RowEchelonEliminator<R: EuclideanRing>: MatrixEliminator<R> {
     let reduced: Bool
     var currentRow = 0
