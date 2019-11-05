@@ -7,53 +7,8 @@
 //
 
 import XCTest
-@testable import SwiftyMath
-
-extension RationalNumber: ExpressibleByIntegerLiteral {
-    public init(integerLiteral value: Int) {
-        self.init(value)
-    }
-}
-
-class RowEliminatonDataTests: XCTestCase {
-    private typealias R = 𝐙
-    private typealias M2 = Matrix2<R>
-    private typealias data = RowEliminationData<R>
-    
-    func testEqual() {
-        let a = M2(1,2,3,4)
-        let w = data(a)
-        XCTAssertEqual(a, w.resultAs(M2.self))
-    }
-    
-    func testAddRow() {
-        let a = M2(1,2,3,4)
-        let w = data(a)
-        w.addRow(at: 0, to: 1, multipliedBy: 1)
-        XCTAssertEqual(w.resultAs(M2.self), M2(1,2,4,6))
-    }
-    
-    func testAddRowWithMul() {
-        let a = M2(1,2,3,4)
-        let w = data(a)
-        w.addRow(at: 0, to: 1, multipliedBy: 2)
-        XCTAssertEqual(w.resultAs(M2.self), M2(1,2,5,8))
-    }
-    
-    func testMulRow() {
-        let a = M2(1,2,3,4)
-        let w = data(a)
-        w.multiplyRow(at: 0, by: 2)
-        XCTAssertEqual(w.resultAs(M2.self), M2(2,4,3,4))
-    }
-    
-    func testSwapRows() {
-        let a = M2(1,2,3,4)
-        let w = data(a)
-        w.swapRows(0, 1)
-        XCTAssertEqual(w.resultAs(M2.self), M2(3,4,1,2))
-    }
-}
+import SwiftyMath
+@testable import SwiftySolver
 
 class MatrixEliminationTests: XCTestCase {
     
