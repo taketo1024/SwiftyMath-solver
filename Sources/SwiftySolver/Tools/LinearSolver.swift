@@ -80,6 +80,20 @@ extension LinearSolver where R: Field {
     }
 }
 
+extension LinearSolver where R == 𝐅₂ {
+    public static func probablyHasSolution<n, m>(_ A: Matrix<n, m, R>, _ b: ColVector<n, R>) -> Bool {
+        let pivots = MatrixPivotFinder.findPivots(of: A.asDynamicMatrix).pivots
+        let Ab = A.concatHorizontally(b).asDynamicMatrix
+
+        let r1 = FastRankCalculator.calculateRank(of:  A.asDynamicMatrix, withPivots: pivots)
+        let r2 = FastRankCalculator.calculateRank(of: Ab.asDynamicMatrix, withPivots: pivots)
+        
+        assert(r1 == r2 || r1 + 1 == r2)
+
+        return r1 == r2
+    }
+}
+
 private extension Matrix {
     var rowHeight: Int {
         Set(nonZeroComponents.lazy.map { $0.row + 1 } ).max() ?? 0

@@ -61,4 +61,56 @@ class LinearSolverTests: XCTestCase {
         
         XCTAssertFalse(LinearSolver.hasSolution(A, b))
     }
+    
+    func testProbablyHasSolution() {
+        typealias R = 𝐅₂
+        
+        let size = (5, 4)
+        let grid: [R] = [
+            1, 0, 1, 0,
+            0, 1, 1, 1,
+            0, 0, 0, 0,
+            1, 1, 0, 1,
+            1, 0, 1, 0
+        ]
+        
+        let A = DMatrix<R>(size: size, grid: grid)
+        let b = DVector<R>(size: (size.0, 1), grid: [1, 1, 0, 0, 1])
+        
+        XCTAssertTrue(LinearSolver.probablyHasSolution(A, b))
+    }
+
+    func testProbablyHasSolution_trivial() {
+        typealias R = 𝐅₂
+        let size = (5, 4)
+        let grid: [R] = [
+            1, 0, 1, 0,
+            0, 1, 1, 1,
+            0, 0, 0, 0,
+            1, 1, 0, 1,
+            1, 0, 1, 0
+        ]
+        
+        let A = DMatrix<R>(size: size, grid: grid)
+        let b = DVector<R>(size: (size.0, 1), grid: [0, 0, 0, 0, 0])
+        
+        XCTAssertTrue(LinearSolver.probablyHasSolution(A, b))
+    }
+    
+    func testProbablyHasSolution_noSolution() {
+        typealias R = 𝐅₂
+        let size = (5, 4)
+        let grid: [R] = [
+            1, 0, 1, 0,
+            0, 1, 1, 1,
+            0, 0, 0, 0,
+            1, 1, 0, 1,
+            1, 0, 1, 0
+        ]
+        
+        let A = DMatrix<R>(size: size, grid: grid)
+        let b = DVector<R>(size: (size.0, 1), grid: [1, 1, 0, 0, 0])
+        
+        XCTAssertFalse(LinearSolver.probablyHasSolution(A, b))
+    }
 }
