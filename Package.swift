@@ -1,4 +1,4 @@
-// swift-tools-version:5.1
+// swift-tools-version:5.2
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -12,7 +12,7 @@ let package = Package(
             targets: ["SwiftySolver"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/taketo1024/SwiftyMath.git", from: "2.0.0"),
+        .package(url: "https://github.com/taketo1024/SwiftyMath.git", from: "2.1.0"),
     ],
     targets: [
         .target(
